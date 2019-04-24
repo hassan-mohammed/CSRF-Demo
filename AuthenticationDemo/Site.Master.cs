@@ -58,12 +58,12 @@ namespace AuthenticationDemo
             }
             else
             {
-                // Validate the Anti-XSRF token
-                //if ((string)ViewState[AntiXsrfTokenKey] != _antiXsrfTokenValue
-                //    || (string)ViewState[AntiXsrfUserNameKey] != (Context.User.Identity.Name ?? String.Empty))
-                //{
-                //    throw new InvalidOperationException("Validation of Anti-XSRF token failed.");
-                //}
+                //Validate the Anti - XSRF token
+                if ((string)ViewState[AntiXsrfTokenKey] != _antiXsrfTokenValue
+                    || (string)ViewState[AntiXsrfUserNameKey] != (Context.User.Identity.Name ?? String.Empty))
+                {
+                    throw new InvalidOperationException("Validation of Anti-XSRF token failed.");
+                }
             }
         }
 
